@@ -1,0 +1,870 @@
+/*---------------------------------------
+  Base CSS Import
+---------------------------------------*/
+@import './base.css';
+
+/*---------------------------------------
+  Fonts
+---------------------------------------*/
+
+/* Star Jedi Font */
+@font-face {
+  font-family: 'Star Jedi';
+  src: local('Star Jedi'), url('./path-to-your-fonts/Starjedi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*---------------------------------------
+  Typing Animation
+---------------------------------------*/
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+.aurebesh {
+  font-family: 'Aurek-Besh', sans-serif;
+}
+
+@keyframes invertTyping {
+  from { width: 100% }
+  to { width: 0 }
+}
+
+/*---------------------------------------
+  Blinking Cursor Animation
+---------------------------------------*/
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+/*---------------------------------------
+  Header Styles
+---------------------------------------*/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*---------------------------------------
+  H1 Styles
+---------------------------------------*/
+h1 {
+  font-family: 'Star Jedi', sans-serif;
+  margin: 20px 0;
+  color: #39c;
+  font-weight: bold;
+  animation: changeFont 1s forwards;
+}
+
+/*---------------------------------------
+  Responsive H1 Styles
+---------------------------------------*/
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+
+/*---------------------------------------
+  Label and Span Styles
+---------------------------------------*/
+label, span {
+  margin: 20px 0;
+  color: #39c;
+  font-family: 'Star Jedi', sans-serif;
+}
+
+/*---------------------------------------
+  Heading Styles
+---------------------------------------*/
+h2, h3, h4, h5, h6 {
+  font-family: 'Star Jedi', sans-serif;
+}
+
+/*---------------------------------------
+  Black Bar Styles
+---------------------------------------*/
+.black-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px 0;
+}
+
+/*---------------------------------------
+  Logo Styles
+---------------------------------------*/
+.logo {
+  max-width: 300px;
+  display: block;
+}
+
+/*---------------------------------------
+  Responsive Logo Styles
+---------------------------------------*/
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    max-width: 150px;
+  }
+}
+
+/*---------------------------------------
+  Main Content Styles
+---------------------------------------*/
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: normal;
+  background-image:'//localhost:8080/Desktop/Images/personnages/${imageName}.png';
+}
+
+/*---------------------------------------
+  Footer Styles
+---------------------------------------*/
+.footer {
+  text-align: center;
+}
+
+.footer-text,
+.api-link {
+  display: block;
+  color : yellow;
+}
+
+.footer.black-bar {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*---------------------------------------
+  Anchor and Green Text Styles
+---------------------------------------*/
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/*---------------------------------------
+  Desktop Styles
+---------------------------------------*/
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+/*---------------------------------------
+  Dropdown Styles
+---------------------------------------*/
+.film-dropdown, .species-dropdown, .manufacturer-dropdown {
+  margin-right: 20px;
+}
+
+/*---------------------------------------
+  Search Bar Styles
+---------------------------------------*/
+.search-bar input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid yellow;
+  border-radius: 30px;
+  color: #39c;
+  background-color: black;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: 1em;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+.search-bar-container {
+  margin-bottom: 20px;
+}
+
+.search-bar input[type="text"]:focus {
+  outline: none;
+  border-color: #ff0;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.75);
+}
+
+.search input[type="text"]:hover {
+  background-color: #333;
+}
+
+/*---------------------------------------
+  Responsive Search Bar Styles
+---------------------------------------*/
+
+@media (max-width: 768px) {
+  .search-bar input[type="text"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-bar input[type="text"] {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/*---------------------------------------
+  Sorting Styles
+---------------------------------------*/
+.sorting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort-label {
+  margin-right: 10px;
+}
+
+.option {
+  margin-right: 10px;
+}
+
+.dropdown {
+  margin-right: 10px;
+}
+
+/*---------------------------------------
+  Responsive Sorting Styles
+---------------------------------------*/
+
+@media (max-width: 576px) {
+  .sorting {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort-label {
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+
+  .option {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .dropdown {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+/*---------------------------------------
+  Navigation Button Styles
+---------------------------------------*/
+
+.nav-button {
+  background-color: transparent; 
+  border: 2px solid yellow; 
+  border-radius: 20px; 
+  padding: 10px 20px;
+  text-decoration: none;
+  color: yellow; 
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  font-family: 'Star Jedi', sans-serif; 
+}
+
+.nav-button:hover {
+  background-color: yellow; 
+  color: #000;
+}
+
+.router-link-active, .router-link-exact-active {
+  background-color: yellow; 
+  color: #000; 
+}
+
+/*---------------------------------------
+  Responsive Navigation Styles
+---------------------------------------*/
+
+@media (max-width: 768px) {
+  .nav-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-button {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-right: 3px;
+  }
+}
+
+/*---------------------------------------
+  Film Poster Styles
+---------------------------------------*/
+.film-poster {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 10px;
+  background-color: black;
+  transition: background-color 0.3s;
+  flex: 0 0 200px;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  font-family: Star Jedi;
+  text-transform: lowercase;
+}
+
+.film-poster p {
+  margin-top: 5px;
+  color: yellow;
+  font-size: 0.85em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.film-poster img {
+  width: auto;
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  height: 250px;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.film-poster:hover {
+  background-color: yellow;
+}
+
+.film-poster:hover p {
+  color: black;
+}
+
+.film-posters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.all-films {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/*---------------------------------------
+  Responsive Film Poster Styles
+---------------------------------------*/
+
+@media (max-width: 768px) {
+  .film-poster {
+    width: 150px;
+    height: 240px;
+  }
+
+  .film-poster img {
+    max-height: 200px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .film-poster {
+    width: 120px;
+    height: 200px;
+  }
+
+  .film-poster img {
+    max-height: 150px;
+    height: 130px;
+  }
+}
+
+/*---------------------------------------
+  Trilogy Section Styles
+---------------------------------------*/
+.trilogy-section {
+  text-align: center;
+}
+
+.trilogy-title {
+  margin: 20px 0;
+  color: #39c;
+  font-weight: bold;
+}
+
+/*---------------------------------------
+  FilmsDetails Styles
+---------------------------------------*/
+
+.character-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.character-item {
+  margin: 10px;
+  text-align: center;
+}
+
+.character-image {
+  width: 150px;
+  height: auto;
+
+}
+
+.character-name {
+  color: yellow;
+  margin-top: 5px;
+}
+
+.film-details-container {
+  font-family: 'Star Jedi', sans-serif;
+  color: yellow;
+  text-transform: lowercase;
+}
+.film-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.film-details-container > div {
+  margin-bottom: 10px;
+}
+
+/*---------------------------------------
+  Character Images Styles
+---------------------------------------*/
+.character-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.character-item {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 350px;
+  padding: 10px;
+  background-color: black;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  font-family: Star Jedi;
+  text-transform : lowercase; 
+}
+
+.character-image {
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.character-name {
+  color: yellow;
+  text-align: center;
+  font-size: 1em;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-item:hover {
+  background-color: yellow;
+}
+
+.character-item:hover .character-name {
+  color: black;
+}
+
+/*---------------------------------------
+  CharacterDetails Styles
+---------------------------------------*/
+
+.character-details-container {
+  font-family: 'Star Jedi', sans-serif;
+  color: yellow;
+  font-size: 13px;
+  text-transform: lowercase;
+}
+
+.character-info {
+  text-align: left;
+}
+
+.character-image-container {
+  border: 3px solid yellow;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  margin: auto;
+  max-width: 250px;
+}
+
+.character-image {
+  width: 100%;
+  height: auto;
+}
+
+.film-poster img {
+  width: auto;
+  height: 250px;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .character-details-container {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .character-details-container {
+    font-size: 11px;
+  }
+}
+
+/*---------------------------------------
+  Ship Images Styles
+---------------------------------------*/
+.ship-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ship-item {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  width: calc(20% - 20px);
+  height: 300px;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  transition: background-color 0.3s;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  font-family: Star Jedi;
+  text-transform: lowercase;
+}
+
+.ship-image {
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.ship-name {
+  color: yellow;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.ship-item:hover {
+  background-color: yellow;
+}
+
+.ship-item:hover .ship-name {
+  color: black;
+}
+
+/*---------------------------------------
+  ShipImages Responsive Styles
+---------------------------------------*/
+
+@media (max-width: 576px) {
+  .ship-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .ship-item {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (min-width: 769px) {
+  .ship-item {
+    width: calc(25% - 20px);
+  }
+}
+
+/*---------------------------------------
+  ShipDetails Styles
+---------------------------------------*/
+
+.ship-details-container {
+  font-family: 'Star Jedi', sans-serif;
+  color: yellow;
+  font-size: 13px;
+  text-transform: lowercase;
+}
+
+.ship-image-container {
+  border: 3px solid yellow;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 0, 0.5);
+  width: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ship-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+/*---------------------------------------
+  Responsive ShipDetails Styles
+---------------------------------------*/
+
+@media (max-width: 576px) {
+  .ship-image {
+    max-height: 50vh;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .ship-image {
+    max-height: 60vh;
+  }
+}
+
+@media (min-width: 769px) {
+  .ship-image {
+    max-height: 70vh;
+  }
+}
+
+/*---------------------------------------
+  Planet Styles
+---------------------------------------*/
+.planet {
+  border: 2px solid yellow;
+  border-radius: 10px;
+  margin: 10px;
+  width: calc(20% - 20px);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: black;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  font-family: Star Jedi;
+  text-transform : lowercase; 
+}
+
+.planet:hover {
+  background-color: yellow; 
+}
+
+.planet:hover p {
+  color: black; 
+}
+
+.planet img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.planet p {
+  color: yellow;
+  margin-top: 5px;
+  z-index: 10;
+  position: relative;
+}
+
+.planet-images {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around;
+}
+
+.planet {
+  align-self: flex-start;
+}
+
+/*---------------------------------------
+  Responsive Planet Styles
+---------------------------------------*/
+
+@media (max-width: 768px) {
+  .planet {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .planet {
+    width: calc(50% - 20px);
+  }
+}
+
+/*---------------------------------------
+  PlanetDetails Styles
+---------------------------------------*/
+
+.planet-details-container {
+  font-family: 'Star Jedi', sans-serif;
+  color: yellow;
+  font-size: 13px;
+  text-transform: lowercase;
+}
+
+.planet-image-container {
+  border: 3px solid yellow;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 0, 0.5);
+  width: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.planet-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+/*---------------------------------------
+  Responsive PlanetDetails Styles
+---------------------------------------*/
+
+@media (max-width: 576px) {
+  .planet-image {
+    max-height: 50vh;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .planet-image {
+    max-height: 60vh;
+  }
+}
+
+@media (min-width: 769px) {
+  .planet-image {
+    max-height: 70vh;
+  }
+}
+
+/*---------------------------------------
+  Button Styles
+---------------------------------------*/
+button {
+  padding: 10px 20px; 
+  margin: 0 10px; 
+  border: 2px solid yellow; 
+  border-radius: 20px; 
+  background-color: transparent; 
+  color: yellow; 
+  font-weight: bold; 
+  text-transform: uppercase;
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+button:hover {
+  background-color: yellow; 
+  color: black; 
+}
+
+.buttons-container {
+  text-align: center; 
+  padding: 20px 0; 
+}
